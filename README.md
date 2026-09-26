@@ -1,5 +1,7 @@
 # rs-ge
 
+> **Work in progress, experimental.** The API may change without notice, parts of it are untested against the live service, and it isn't ready for production use.
+
 A typed TypeScript client for the SOAP services of Georgia's Revenue Service (rs.ge): the TaxPayer service, the WayBill service and the NTOS e-invoice service. It authenticates with a **service user** (სერვისის მომხმარებელი), the limited login a taxpayer creates in their rs.ge account for software, and never with the main portal password.
 
 - No runtime dependencies. It only needs `fetch`, so it runs on Node 22+, Cloudflare Workers, Deno and Bun.
