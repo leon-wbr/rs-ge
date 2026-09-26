@@ -109,7 +109,11 @@ pnpm generate      # regenerate src/generated from wsdl/
 pnpm wsdl:check    # compare wsdl/ with what rs.ge serves now
 ```
 
-`fixtures/synthetic` holds responses shaped from the WSDLs with invented values. Recorded responses go in `fixtures/recorded` after they have been anonymised.
+`fixtures/synthetic` holds responses shaped from the WSDLs with invented values. Recorded responses go in `fixtures/recorded` only after `scripts/anonymise.ts` has replaced every identifier with a stable fake and scaled the amounts:
+
+```sh
+RSGE_IDENTIFIERS='206322102,Name Surname' RSGE_SCALE=0.83 node scripts/anonymise.ts recorded/Get_QuickCash_Info.raw.xml fixtures/recorded/Get_QuickCash_Info.xml
+```
 
 ## Licence
 
