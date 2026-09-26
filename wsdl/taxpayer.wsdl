@@ -1,0 +1,1871 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="services.rs.ge" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="services.rs.ge" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="services.rs.ge">
+      <s:element name="GetTPInfoPublic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TP_Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTPInfoPublicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTPInfoPublicResult" type="tns:ResponseTPInfoPublic" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseTPInfoPublic">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="tns:Response" />
+          <s:element minOccurs="0" maxOccurs="1" name="TPInfoPublic" type="tns:TPInfoPublic" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TPInfoPublic">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TP_Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TP_Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_LegalForm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TP_StatusVat" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_RegLocationId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_RegLocation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTPInfoPublicContacts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TP_Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTPInfoPublicContactsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTPInfoPublicContactsResult" type="tns:ResponseTPInfoPublicContacts" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseTPInfoPublicContacts">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="tns:Response" />
+          <s:element minOccurs="0" maxOccurs="1" name="TPInfoPublicContacsInfo" type="tns:TPInfoPublicContacs" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TPInfoPublicContacs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TP_InvoiceContactPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_InvoiceContactEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_WaybillContactPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TP_WaybillContactEmail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Income_Amount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Income_AmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Income_AmountResult" type="tns:ResponseIncomeAmount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseIncomeAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonIncomeData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPersonalNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonIncomeDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonIncomeDataResult" type="tns:ResponsePersonIncomeData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponsePersonIncomeData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:PersonIncomeData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PersonIncomeData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="YearlyAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MonthlyAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Z_Report_Sum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Z_Report_SumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Z_Report_SumResult" type="tns:ResponseGetZReportSum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseGetZReportSum">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="CashData" type="tns:ZReportSumProperties" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZReportSumProperties">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PaidCash" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaidOther" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Z_Report_Details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Z_Report_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Z_Report_DetailsResult" type="tns:ZreportDetailsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZreportDetailsResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZreportDetailsData" type="tns:ArrayOfZreportDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZreportDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZreportDetails" nillable="true" type="tns:ZreportDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZreportDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReportDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaidAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaidCash" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaidOther" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZNumber" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_QuickCash_Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_QuickCash_InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_QuickCash_InfoResult" type="tns:OrgRevenue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrgRevenue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="response" type="tns:Response" />
+          <s:element minOccurs="0" maxOccurs="1" name="IncomeDeclaration" type="tns:IncomeDeclaration" />
+          <s:element minOccurs="0" maxOccurs="1" name="VatDeclaration" type="tns:ArrayOfVatDeclaration" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompCard" type="tns:ArrayOfCompCard" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalaryMonthly" type="tns:ArrayOfMonthlyInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="WaybillMonthly" type="tns:ArrayOfMonthlyInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceMonthly" type="tns:ArrayOfMonthlyInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IncomeDeclaration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NaceCode" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="creditPay" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="totalRevenue" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVatDeclaration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VatDeclaration" nillable="true" type="tns:VatDeclaration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VatDeclaration">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="compensation" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompCard" nillable="true" type="tns:CompCard" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ficedCapital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="fine" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="penaltyTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="surplus" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMonthlyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MonthlyInfo" nillable="true" type="tns:MonthlyInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MonthlyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaxPeriod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InfoType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Customs_WareHouse_Exit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeclarationNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomsCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Customs_WareHouse_ExitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Customs_WareHouse_ExitResult" type="tns:ResponseCustomsWareHouseExit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseCustomsWareHouseExit">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Payer_Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saidCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Payer_InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Payer_InfoResult" type="tns:TaxyPayerResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TaxyPayerResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataObject" type="tns:PayerInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PayerInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="payerStatus" type="tns:PayerStatu" />
+          <s:element minOccurs="0" maxOccurs="1" name="earningsDeclaration" type="tns:ArrayOfEarningsDeclaration" />
+          <s:element minOccurs="0" maxOccurs="1" name="yearlyIncomeStatement" type="tns:ArrayOfYearlyIncomeStatement" />
+          <s:element minOccurs="0" maxOccurs="1" name="vatDeclaration" type="tns:ArrayOfVatDeclarationInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="exciseDeclaration" type="tns:ArrayOfExciseDeclaration" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomeDeclarationInfo" type="tns:ArrayOfIncomeDeclarationInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="wybillInfo" type="tns:ArrayOfWaybillInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="actOfComparison" type="tns:ArrayOfActOfComparison" />
+          <s:element minOccurs="0" maxOccurs="1" name="cashBoxInfo" type="tns:ArrayOfCashBoxInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="customDeclaration" type="tns:ArrayOfCustomDeclaration" />
+          <s:element minOccurs="0" maxOccurs="1" name="earningsDeclarationMonth" type="tns:ArrayOfEarningsDeclarationMonth" />
+          <s:element minOccurs="0" maxOccurs="1" name="earningsDeclarationMonth_v2" type="tns:ArrayOfEarningsDeclarationMonth_2" />
+          <s:element minOccurs="0" maxOccurs="1" name="propertyDeclarationInfo" type="tns:PropertyDeclarationInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PayerStatu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SaidCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="businessStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="activityStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="isVatDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEarningsDeclaration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EarningsDeclaration" nillable="true" type="tns:EarningsDeclaration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EarningsDeclaration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COL_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_12" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_15" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_16" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_17" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_18" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_19" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_20" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_21" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_22" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_23" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_24" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_25" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_26" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_27" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_28" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_29" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_30" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_31" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_32" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_33" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_34" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_35" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_36" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_37" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_38" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_39" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_40" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_41" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_42" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_43" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_44" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_45" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_46" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_47" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_48" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_49" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_50" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_51" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_52" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_53" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_54" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_55" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_56" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_57" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_58" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_59" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NaceCodes" type="tns:ArrayOfNaceCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNaceCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NaceCode" nillable="true" type="tns:NaceCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NaceCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="naceCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="naceName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncPerc" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfYearlyIncomeStatement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YearlyIncomeStatement" nillable="true" type="tns:YearlyIncomeStatement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YearlyIncomeStatement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfPeriod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_15" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_18" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_19" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_20" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_22" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_23" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_34" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_39" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_40" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_43" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_21" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_35" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_37" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_38" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_41" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_42" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_44" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_45" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_46" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVatDeclarationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VatDeclarationInfo" nillable="true" type="tns:VatDeclarationInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VatDeclarationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfPeriod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_2" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_3" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_4" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_5" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_15" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_16" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_1" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_6" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_7" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_8" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_9" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_10" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_11" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_12" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_13" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_14" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_17" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_18" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfExciseDeclaration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExciseDeclaration" nillable="true" type="tns:ExciseDeclaration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExciseDeclaration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfPeriod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_1" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_2" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_3" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_5" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_6" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_8" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_12" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_15" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_16" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_11" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIncomeDeclarationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IncomeDeclarationInfo" nillable="true" type="tns:IncomeDeclarationInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IncomeDeclarationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfPeriod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_16" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_19" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_39" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_56" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_58" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_61" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_65" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_66" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_20" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_21" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_22" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_24" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_26" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_27" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_33" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_40" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_48" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_57" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_62" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_63" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_64" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_67" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWaybillInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WaybillInfo" nillable="true" type="tns:WaybillInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WaybillInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WybillBeginDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WaybillInfoGoodsList" type="tns:ArrayOfWaybillInfoGoods" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWaybillInfoGoods">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WaybillInfoGoods" nillable="true" type="tns:WaybillInfoGoods" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WaybillInfoGoods">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="wName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="unit" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="quantity" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="onePrice" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfActOfComparison">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActOfComparison" nillable="true" type="tns:ActOfComparison" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActOfComparison">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaxName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartMain" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartPenalty" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartPenaltyTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartSurplusOfCapital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LdutyMarkup" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LdutyAddMarkup" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LdutyBudgetPaid" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndtMain" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndPenalty" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndPenaltyTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndSurplusOfCapital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarkupUnadmitted" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DefAdmitted" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCashBoxInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CashBoxInfo" nillable="true" type="tns:CashBoxInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CashBoxInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="REGID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="zReport" type="tns:ArrayOfZReport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZReport" nillable="true" type="tns:ZReport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ZDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZAmount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomDeclaration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomDeclaration" nillable="true" type="tns:CustomDeclaration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomDeclaration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COL_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_22_A" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_22_B" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_23" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_27" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_28_A" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_28_B" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_29" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_31" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_33" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_34" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_35" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_37" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_38" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_46" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_47_MOSAKREBELI" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_47_BAJI" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_47_AKCIZI" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_47_DGG" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_48" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_49" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_48_TAR" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEarningsDeclarationMonth">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EarningsDeclarationMonth" nillable="true" type="tns:EarningsDeclarationMonth" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EarningsDeclarationMonth">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COL_PAYER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_SAID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_ADDRESS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_ORG_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_DECL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_YEAR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_DECL_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_REG_NUMBER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_FACT_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MONTH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_1" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_2" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_3" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_4" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_5" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_6" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_7" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_8" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_9" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_10" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_11" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_12" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_13" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_14" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_15" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_16" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_17" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_18" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_19" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_20" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_21" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_22" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_23" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_24" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_25" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_26" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_27" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_28" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_29" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_30" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_31" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_32" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_33" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_34" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_35" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_36" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_37" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_38" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_39" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_40" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_41" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_42" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_43" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_44" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_45" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_46" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_47" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_48" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_49" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_50" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NaceCodes" type="tns:ArrayOfNaceCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEarningsDeclarationMonth_2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EarningsDeclarationMonth_2" nillable="true" type="tns:EarningsDeclarationMonth_2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EarningsDeclarationMonth_2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COL_PAYER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_SAID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_ADDRESS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_ORG_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_DECL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_YEAR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_DECL_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_REG_NUMBER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_FACT_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MONTH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_1" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_2" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_3" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_4" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_5" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_6" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_7" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_8" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_9" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_10" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_11" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_12" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_13" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_14" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_15" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_16" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_17" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_18" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_19" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_20" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_21" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_22" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_23" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_24" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_25" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_26" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_27" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_28" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_29" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_30" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_31" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_32" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_33" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_34" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_35" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_36" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_37" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_38" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_39" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_40" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_41" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_42" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_43" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_44" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_45" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_46" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_47" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_48" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_49" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_50" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NaceCodes" type="tns:ArrayOfNaceCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyDeclarationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="propDeclTypeOneList" type="tns:ArrayOfPropDeclTypeOne" />
+          <s:element minOccurs="0" maxOccurs="1" name="propDeclTypeTwoList" type="tns:ArrayOfPropDeclTypeTwo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropDeclTypeOne">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="propDeclTypeOne" nillable="true" type="tns:propDeclTypeOne" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="propDeclTypeOne">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfPeriod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_5" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_6" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_7" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_8" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_9" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_10" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_11" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_12" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_13" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropDeclTypeTwo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="propDeclTypeTwo" nillable="true" type="tns:propDeclTypeTwo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="propDeclTypeTwo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfPeriod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="col_2_rekv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="col_3_rekv" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="col_2_4" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="col_2_5" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="col_2_6" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="col_2_7" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="col_2_8" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_comp_act_new">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saidCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="start_date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end_date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_comp_act_newResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_comp_act_newResult" type="tns:ActOfComparisonResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActOfComparisonResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompAct" type="tns:ArrayOfActOfComparison" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompActOld" type="tns:ArrayOfActOfComparisonOld" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfActOfComparisonOld">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActOfComparisonOld" nillable="true" type="tns:ActOfComparisonOld" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActOfComparisonOld">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DESC" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_5" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_6" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_7" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_8" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_9" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_10" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_11" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Payer_Info_Activation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saidCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Payer_Info_ActivationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Payer_Info_ActivationResult" type="tns:PayerInfoActivationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PayerInfoActivationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Tp_sms_verification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saidCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Tp_sms_verificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tp_sms_verificationResult" type="tns:smsVerificationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="smsVerificationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="smsActivate" type="tns:SmsActivate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SmsActivate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_comp_act_old">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saidCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="start_date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end_date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_comp_act_oldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_comp_act_oldResult" type="tns:ActOfCompOldResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActOfCompOldResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompActOld" type="tns:ArrayOfActOfComparisonOld" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Waybill_Month_Amount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saidCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Waybill_Month_AmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Waybill_Month_AmountResult" type="tns:ResponseWeubillData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseWeubillData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="waybillData" type="tns:ArrayOfWaybillData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWaybillData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="waybillData" nillable="true" type="tns:waybillData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="waybillData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="MontYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActionStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellerBueyr" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="get_payer_info_gita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_payer_info_gitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_payer_info_gitaResult" type="tns:GitaResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GitaResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayerData" type="tns:PayerData" />
+          <s:element minOccurs="0" maxOccurs="1" name="personSalary" type="tns:ArrayOfPersonSalary" />
+          <s:element minOccurs="0" maxOccurs="1" name="vatDeclartion" type="tns:ArrayOfVatDeclartion" />
+          <s:element minOccurs="0" maxOccurs="1" name="incomeDecl" type="tns:ArrayOfIncomeDecl" />
+          <s:element minOccurs="0" maxOccurs="1" name="earningDecl" type="tns:ArrayOfEarningDecl" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PayerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="payerCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="payerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legalFrom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sezRest" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="vatRegDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="payerCurrStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="payerAM" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SL_COL_1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SL_COL_2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SL_COL_3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SL_COL_4" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPersonSalary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="personSalary" nillable="true" type="tns:personSalary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="personSalary">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="COL_1" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_5" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_6" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVatDeclartion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="vatDeclartion" nillable="true" type="tns:vatDeclartion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="vatDeclartion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="COL_2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_5" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_6" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIncomeDecl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="incomeDecl" nillable="true" type="tns:incomeDecl" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="incomeDecl">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="COL_1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="COL_2" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEarningDecl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="earningDecl" nillable="true" type="tns:earningDecl" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="earningDecl">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="COL_1" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COL_2" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Gita_Payer_Activation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payerCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Gita_Payer_ActivationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Gita_Payer_ActivationResult" type="tns:GitaActivationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GitaActivationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Gita_Sms_Verification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Gita_Sms_VerificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Gita_Sms_VerificationResult" type="tns:GitaSmsVerification" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GitaSmsVerification">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="tns:ErrorDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_LegalPerson_Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inSaidCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_LegalPerson_InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_LegalPerson_InfoResult" type="tns:LegalPersonResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LegalPersonResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="tns:Response" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalPersonInfo" type="tns:LegalPerson" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LegalPerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdentificationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalForm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalFormId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegaStatisId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponsiblePersons" type="tns:ArrayOfResponsiblePerson" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfResponsiblePerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponsiblePerson" nillable="true" type="tns:ResponsiblePerson" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResponsiblePerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PrivateNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Cargo200_Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inStartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="inEndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Cargo200_InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Cargo200_InfoResult" type="tns:Cargo200Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cargo200Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="tns:Response" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cargo200sData" type="tns:ArrayOfCargo200" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCargo200">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cargo200" nillable="true" type="tns:Cargo200" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cargo200">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Cargo200ResponsiblePersonData" type="tns:Cargo200ResponsiblePerson" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cargo200PersonData" type="tns:Cargo200Person" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cargo200AttachedDocumentsData" type="tns:ArrayOfCargo200AttachedDocument" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cargo200ResponsiblePerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PrivateNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cargo200Person">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PrivateNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransferType" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransferDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCargo200AttachedDocument">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cargo200AttachedDocument" nillable="true" type="tns:Cargo200AttachedDocument" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cargo200AttachedDocument">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocumentDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentContent" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Payer_Nace_Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inSaidCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Payer_Nace_InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Payer_Nace_InfoResult" type="tns:PayerNaceInfoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PayerNaceInfoResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="tns:Response" />
+          <s:element minOccurs="0" maxOccurs="1" name="NaceInfo" type="tns:PayerNaceInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PayerNaceInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SaidCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NaceData" type="tns:ArrayOfNace" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNace">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Nace" nillable="true" type="tns:Nace" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Nace">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NaceCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NaceName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTPInfoPublicSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTPInfoPublic" />
+  </wsdl:message>
+  <wsdl:message name="GetTPInfoPublicSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTPInfoPublicResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTPInfoPublicContactsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTPInfoPublicContacts" />
+  </wsdl:message>
+  <wsdl:message name="GetTPInfoPublicContactsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTPInfoPublicContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Income_AmountSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Income_Amount" />
+  </wsdl:message>
+  <wsdl:message name="Get_Income_AmountSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Income_AmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonIncomeDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonIncomeData" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonIncomeDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonIncomeDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Z_Report_SumSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Z_Report_Sum" />
+  </wsdl:message>
+  <wsdl:message name="Get_Z_Report_SumSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Z_Report_SumResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Z_Report_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Z_Report_Details" />
+  </wsdl:message>
+  <wsdl:message name="Get_Z_Report_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Z_Report_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_QuickCash_InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_QuickCash_Info" />
+  </wsdl:message>
+  <wsdl:message name="Get_QuickCash_InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_QuickCash_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Customs_WareHouse_ExitSoapIn">
+    <wsdl:part name="parameters" element="tns:Customs_WareHouse_Exit" />
+  </wsdl:message>
+  <wsdl:message name="Customs_WareHouse_ExitSoapOut">
+    <wsdl:part name="parameters" element="tns:Customs_WareHouse_ExitResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Payer_InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Payer_Info" />
+  </wsdl:message>
+  <wsdl:message name="Get_Payer_InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Payer_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_comp_act_newSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_comp_act_new" />
+  </wsdl:message>
+  <wsdl:message name="Get_comp_act_newSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_comp_act_newResponse" />
+  </wsdl:message>
+  <wsdl:message name="Payer_Info_ActivationSoapIn">
+    <wsdl:part name="parameters" element="tns:Payer_Info_Activation" />
+  </wsdl:message>
+  <wsdl:message name="Payer_Info_ActivationSoapOut">
+    <wsdl:part name="parameters" element="tns:Payer_Info_ActivationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Tp_sms_verificationSoapIn">
+    <wsdl:part name="parameters" element="tns:Tp_sms_verification" />
+  </wsdl:message>
+  <wsdl:message name="Tp_sms_verificationSoapOut">
+    <wsdl:part name="parameters" element="tns:Tp_sms_verificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_comp_act_oldSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_comp_act_old" />
+  </wsdl:message>
+  <wsdl:message name="Get_comp_act_oldSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_comp_act_oldResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Waybill_Month_AmountSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Waybill_Month_Amount" />
+  </wsdl:message>
+  <wsdl:message name="Get_Waybill_Month_AmountSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Waybill_Month_AmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_payer_info_gitaSoapIn">
+    <wsdl:part name="parameters" element="tns:get_payer_info_gita" />
+  </wsdl:message>
+  <wsdl:message name="get_payer_info_gitaSoapOut">
+    <wsdl:part name="parameters" element="tns:get_payer_info_gitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Gita_Payer_ActivationSoapIn">
+    <wsdl:part name="parameters" element="tns:Gita_Payer_Activation" />
+  </wsdl:message>
+  <wsdl:message name="Gita_Payer_ActivationSoapOut">
+    <wsdl:part name="parameters" element="tns:Gita_Payer_ActivationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Gita_Sms_VerificationSoapIn">
+    <wsdl:part name="parameters" element="tns:Gita_Sms_Verification" />
+  </wsdl:message>
+  <wsdl:message name="Gita_Sms_VerificationSoapOut">
+    <wsdl:part name="parameters" element="tns:Gita_Sms_VerificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_LegalPerson_InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_LegalPerson_Info" />
+  </wsdl:message>
+  <wsdl:message name="Get_LegalPerson_InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_LegalPerson_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Cargo200_InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Cargo200_Info" />
+  </wsdl:message>
+  <wsdl:message name="Get_Cargo200_InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Cargo200_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Payer_Nace_InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Payer_Nace_Info" />
+  </wsdl:message>
+  <wsdl:message name="Get_Payer_Nace_InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Payer_Nace_InfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceTaxPayerSoap">
+    <wsdl:operation name="GetTPInfoPublic">
+      <wsdl:input message="tns:GetTPInfoPublicSoapIn" />
+      <wsdl:output message="tns:GetTPInfoPublicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTPInfoPublicContacts">
+      <wsdl:input message="tns:GetTPInfoPublicContactsSoapIn" />
+      <wsdl:output message="tns:GetTPInfoPublicContactsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Income_Amount">
+      <wsdl:input message="tns:Get_Income_AmountSoapIn" />
+      <wsdl:output message="tns:Get_Income_AmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonIncomeData">
+      <wsdl:input message="tns:GetPersonIncomeDataSoapIn" />
+      <wsdl:output message="tns:GetPersonIncomeDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Z_Report_Sum">
+      <wsdl:input message="tns:Get_Z_Report_SumSoapIn" />
+      <wsdl:output message="tns:Get_Z_Report_SumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Z_Report_Details">
+      <wsdl:input message="tns:Get_Z_Report_DetailsSoapIn" />
+      <wsdl:output message="tns:Get_Z_Report_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_QuickCash_Info">
+      <wsdl:input message="tns:Get_QuickCash_InfoSoapIn" />
+      <wsdl:output message="tns:Get_QuickCash_InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Customs_WareHouse_Exit">
+      <wsdl:input message="tns:Customs_WareHouse_ExitSoapIn" />
+      <wsdl:output message="tns:Customs_WareHouse_ExitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Payer_Info">
+      <wsdl:input message="tns:Get_Payer_InfoSoapIn" />
+      <wsdl:output message="tns:Get_Payer_InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_comp_act_new">
+      <wsdl:input message="tns:Get_comp_act_newSoapIn" />
+      <wsdl:output message="tns:Get_comp_act_newSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Payer_Info_Activation">
+      <wsdl:input message="tns:Payer_Info_ActivationSoapIn" />
+      <wsdl:output message="tns:Payer_Info_ActivationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Tp_sms_verification">
+      <wsdl:input message="tns:Tp_sms_verificationSoapIn" />
+      <wsdl:output message="tns:Tp_sms_verificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_comp_act_old">
+      <wsdl:input message="tns:Get_comp_act_oldSoapIn" />
+      <wsdl:output message="tns:Get_comp_act_oldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Waybill_Month_Amount">
+      <wsdl:input message="tns:Get_Waybill_Month_AmountSoapIn" />
+      <wsdl:output message="tns:Get_Waybill_Month_AmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_payer_info_gita">
+      <wsdl:input message="tns:get_payer_info_gitaSoapIn" />
+      <wsdl:output message="tns:get_payer_info_gitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Gita_Payer_Activation">
+      <wsdl:input message="tns:Gita_Payer_ActivationSoapIn" />
+      <wsdl:output message="tns:Gita_Payer_ActivationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Gita_Sms_Verification">
+      <wsdl:input message="tns:Gita_Sms_VerificationSoapIn" />
+      <wsdl:output message="tns:Gita_Sms_VerificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_LegalPerson_Info">
+      <wsdl:input message="tns:Get_LegalPerson_InfoSoapIn" />
+      <wsdl:output message="tns:Get_LegalPerson_InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Cargo200_Info">
+      <wsdl:input message="tns:Get_Cargo200_InfoSoapIn" />
+      <wsdl:output message="tns:Get_Cargo200_InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Payer_Nace_Info">
+      <wsdl:input message="tns:Get_Payer_Nace_InfoSoapIn" />
+      <wsdl:output message="tns:Get_Payer_Nace_InfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceTaxPayerSoap" type="tns:ServiceTaxPayerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTPInfoPublic">
+      <soap:operation soapAction="services.rs.ge/GetTPInfoPublic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPInfoPublicContacts">
+      <soap:operation soapAction="services.rs.ge/GetTPInfoPublicContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Income_Amount">
+      <soap:operation soapAction="services.rs.ge/Get_Income_Amount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonIncomeData">
+      <soap:operation soapAction="services.rs.ge/GetPersonIncomeData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Z_Report_Sum">
+      <soap:operation soapAction="services.rs.ge/Get_Z_Report_Sum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Z_Report_Details">
+      <soap:operation soapAction="services.rs.ge/Get_Z_Report_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_QuickCash_Info">
+      <soap:operation soapAction="services.rs.ge/Get_QuickCash_Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customs_WareHouse_Exit">
+      <soap:operation soapAction="services.rs.ge/Customs_WareHouse_Exit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Payer_Info">
+      <soap:operation soapAction="services.rs.ge/Get_Payer_Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_comp_act_new">
+      <soap:operation soapAction="services.rs.ge/Get_comp_act_new" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payer_Info_Activation">
+      <soap:operation soapAction="services.rs.ge/Payer_Info_Activation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tp_sms_verification">
+      <soap:operation soapAction="services.rs.ge/Tp_sms_verification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_comp_act_old">
+      <soap:operation soapAction="services.rs.ge/Get_comp_act_old" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Waybill_Month_Amount">
+      <soap:operation soapAction="services.rs.ge/Get_Waybill_Month_Amount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_payer_info_gita">
+      <soap:operation soapAction="services.rs.ge/get_payer_info_gita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gita_Payer_Activation">
+      <soap:operation soapAction="services.rs.ge/Gita_Payer_Activation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gita_Sms_Verification">
+      <soap:operation soapAction="services.rs.ge/Gita_Sms_Verification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LegalPerson_Info">
+      <soap:operation soapAction="services.rs.ge/Get_LegalPerson_Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Cargo200_Info">
+      <soap:operation soapAction="services.rs.ge/Get_Cargo200_Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Payer_Nace_Info">
+      <soap:operation soapAction="services.rs.ge/Get_Payer_Nace_Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceTaxPayerSoap12" type="tns:ServiceTaxPayerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTPInfoPublic">
+      <soap12:operation soapAction="services.rs.ge/GetTPInfoPublic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPInfoPublicContacts">
+      <soap12:operation soapAction="services.rs.ge/GetTPInfoPublicContacts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Income_Amount">
+      <soap12:operation soapAction="services.rs.ge/Get_Income_Amount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonIncomeData">
+      <soap12:operation soapAction="services.rs.ge/GetPersonIncomeData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Z_Report_Sum">
+      <soap12:operation soapAction="services.rs.ge/Get_Z_Report_Sum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Z_Report_Details">
+      <soap12:operation soapAction="services.rs.ge/Get_Z_Report_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_QuickCash_Info">
+      <soap12:operation soapAction="services.rs.ge/Get_QuickCash_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Customs_WareHouse_Exit">
+      <soap12:operation soapAction="services.rs.ge/Customs_WareHouse_Exit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Payer_Info">
+      <soap12:operation soapAction="services.rs.ge/Get_Payer_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_comp_act_new">
+      <soap12:operation soapAction="services.rs.ge/Get_comp_act_new" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payer_Info_Activation">
+      <soap12:operation soapAction="services.rs.ge/Payer_Info_Activation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tp_sms_verification">
+      <soap12:operation soapAction="services.rs.ge/Tp_sms_verification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_comp_act_old">
+      <soap12:operation soapAction="services.rs.ge/Get_comp_act_old" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Waybill_Month_Amount">
+      <soap12:operation soapAction="services.rs.ge/Get_Waybill_Month_Amount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_payer_info_gita">
+      <soap12:operation soapAction="services.rs.ge/get_payer_info_gita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gita_Payer_Activation">
+      <soap12:operation soapAction="services.rs.ge/Gita_Payer_Activation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gita_Sms_Verification">
+      <soap12:operation soapAction="services.rs.ge/Gita_Sms_Verification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LegalPerson_Info">
+      <soap12:operation soapAction="services.rs.ge/Get_LegalPerson_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Cargo200_Info">
+      <soap12:operation soapAction="services.rs.ge/Get_Cargo200_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Payer_Nace_Info">
+      <soap12:operation soapAction="services.rs.ge/Get_Payer_Nace_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceTaxPayer">
+    <wsdl:port name="ServiceTaxPayerSoap" binding="tns:ServiceTaxPayerSoap">
+      <soap:address location="https://services.rs.ge/taxservice/taxpayerservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceTaxPayerSoap12" binding="tns:ServiceTaxPayerSoap12">
+      <soap12:address location="https://services.rs.ge/taxservice/taxpayerservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="what_is_my_ip">
+        <s:complexType />
+      </s:element>
+      <s:element name="what_is_my_ipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="what_is_my_ipResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_server_time">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_server_timeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_server_timeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="create_service_user">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="create_service_userResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="create_service_userResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_service_user">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_service_userResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="update_service_userResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_service_users">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_service_usersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_service_usersResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chek_service_user">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chek_service_userResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chek_service_userResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="un_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="s_user_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_akciz_codes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_akciz_codesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_akciz_codesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_types">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_typesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybill_typesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_units">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_unitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybill_unitsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_trans_types">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_trans_typesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_trans_typesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_wood_types">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_wood_typesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_wood_typesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="save_waybillResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybillResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_by_number">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_by_numberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybill_by_numberResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itypes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buyer_tin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="full_amount" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_user_ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybillsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybills_v1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buyer_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="last_update_date_s" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="last_update_date_e" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybills_v1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybills_v1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybills_medicaments_moh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="last_update_date" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybills_medicaments_mohResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybills_medicaments_mohResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_buyer_waybills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itypes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seller_tin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="full_amount" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_user_ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_buyer_waybillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_buyer_waybillsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybills_ex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itypes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buyer_tin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="full_amount" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_user_ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="is_confirmed" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybills_exResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybills_exResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_buyer_waybills_ex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itypes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seller_tin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="full_amount" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_user_ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="is_confirmed" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_buyer_waybills_exResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_buyer_waybills_exResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_transporter_waybills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buyer_tin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="full_amount" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_user_ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="is_confirmed" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_transporter_waybillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_transporter_waybillsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="send_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="send_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="send_waybillResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="send_waybil_vd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="send_waybil_vdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="send_waybil_vdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="close_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="close_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="close_waybillResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="close_waybill_vd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="close_waybill_vdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="close_waybill_vdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ref_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ref_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ref_waybillResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ref_waybill_vd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ref_waybill_vdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ref_waybill_vdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="del_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="del_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="del_waybillResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="confirm_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="confirm_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="confirm_waybillResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reject_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reject_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reject_waybillResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_waybill_transporter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="chek_driver_tin" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="trans_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="trans_txt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reception_info" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="receiver_info" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_waybill_transporterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="save_waybill_transporterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="send_waybill_transporter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="send_waybill_transporterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="send_waybill_transporterResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="close_waybill_transporter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="reception_info" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="receiver_info" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="close_waybill_transporterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="close_waybill_transporterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_invoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="in_inv_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_invoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="save_invoiceResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="out_inv_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_waybill_tamplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_waybill_tamplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="save_waybill_tamplateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_tamplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_tamplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_waybill_tamplatesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_tamplates">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_c_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="s_dt" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="e_dt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_c_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_c_waybillResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_tamplates">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_tamplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_tamplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_waybill_tamplateResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_tamplate">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_waybill_tamplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_waybill_tamplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="delete_waybill_tamplateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_bar_code">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bar_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="goods_name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="unit_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="unit_txt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="a_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_bar_codeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="save_bar_codeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_bar_code">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bar_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_bar_codeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="delete_bar_codeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_bar_codes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bar_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_bar_codesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_bar_codesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bar_codes">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_car_numbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="save_car_numbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="save_car_numbersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_car_numbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_car_numbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="delete_car_numbersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_car_numbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_car_numbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_car_numbersResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_numbers">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_name_from_tin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_name_from_tinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_name_from_tinResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_error_codes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_error_codesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_error_codesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_tin_from_un_id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="un_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_tin_from_un_idResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_tin_from_un_idResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_payer_type_from_un_id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="un_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_payer_type_from_un_idResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_payer_type_from_un_idResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="is_vat_payer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="un_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="is_vat_payerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="is_vat_payerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="is_vat_payer_tin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="is_vat_payer_tinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="is_vat_payer_tinResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_adjusted_waybills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_adjusted_waybillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_adjusted_waybillsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_adjusted_waybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_adjusted_waybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_adjusted_waybillResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_print_pdf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="waybill_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_print_pdfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_print_pdfResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_goods_list">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itypes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buyer_tin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="full_amount" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_user_ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_waybill_goods_listResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_waybill_goods_listResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_buyer_waybilll_goods_list">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="su" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itypes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seller_tin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="create_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="driver_tin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="delivery_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="full_amount" nillable="true" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="waybill_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_s" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="close_date_e" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_user_ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_buyer_waybilll_goods_listResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_buyer_waybilll_goods_listResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="what_is_my_ipSoapIn">
+    <wsdl:part name="parameters" element="tns:what_is_my_ip" />
+  </wsdl:message>
+  <wsdl:message name="what_is_my_ipSoapOut">
+    <wsdl:part name="parameters" element="tns:what_is_my_ipResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_server_timeSoapIn">
+    <wsdl:part name="parameters" element="tns:get_server_time" />
+  </wsdl:message>
+  <wsdl:message name="get_server_timeSoapOut">
+    <wsdl:part name="parameters" element="tns:get_server_timeResponse" />
+  </wsdl:message>
+  <wsdl:message name="create_service_userSoapIn">
+    <wsdl:part name="parameters" element="tns:create_service_user" />
+  </wsdl:message>
+  <wsdl:message name="create_service_userSoapOut">
+    <wsdl:part name="parameters" element="tns:create_service_userResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_service_userSoapIn">
+    <wsdl:part name="parameters" element="tns:update_service_user" />
+  </wsdl:message>
+  <wsdl:message name="update_service_userSoapOut">
+    <wsdl:part name="parameters" element="tns:update_service_userResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_service_usersSoapIn">
+    <wsdl:part name="parameters" element="tns:get_service_users" />
+  </wsdl:message>
+  <wsdl:message name="get_service_usersSoapOut">
+    <wsdl:part name="parameters" element="tns:get_service_usersResponse" />
+  </wsdl:message>
+  <wsdl:message name="chek_service_userSoapIn">
+    <wsdl:part name="parameters" element="tns:chek_service_user" />
+  </wsdl:message>
+  <wsdl:message name="chek_service_userSoapOut">
+    <wsdl:part name="parameters" element="tns:chek_service_userResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_akciz_codesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_akciz_codes" />
+  </wsdl:message>
+  <wsdl:message name="get_akciz_codesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_akciz_codesResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_typesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybill_types" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_typesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybill_typesResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_unitsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybill_units" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_unitsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybill_unitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_trans_typesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_trans_types" />
+  </wsdl:message>
+  <wsdl:message name="get_trans_typesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_trans_typesResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_wood_typesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_wood_types" />
+  </wsdl:message>
+  <wsdl:message name="get_wood_typesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_wood_typesResponse" />
+  </wsdl:message>
+  <wsdl:message name="save_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:save_waybill" />
+  </wsdl:message>
+  <wsdl:message name="save_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:save_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybill" />
+  </wsdl:message>
+  <wsdl:message name="get_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_by_numberSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybill_by_number" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_by_numberSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybill_by_numberResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybillsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybills" />
+  </wsdl:message>
+  <wsdl:message name="get_waybillsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybills_v1SoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybills_v1" />
+  </wsdl:message>
+  <wsdl:message name="get_waybills_v1SoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybills_v1Response" />
+  </wsdl:message>
+  <wsdl:message name="get_waybills_medicaments_mohSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybills_medicaments_moh" />
+  </wsdl:message>
+  <wsdl:message name="get_waybills_medicaments_mohSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybills_medicaments_mohResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_buyer_waybillsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_buyer_waybills" />
+  </wsdl:message>
+  <wsdl:message name="get_buyer_waybillsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_buyer_waybillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybills_exSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybills_ex" />
+  </wsdl:message>
+  <wsdl:message name="get_waybills_exSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybills_exResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_buyer_waybills_exSoapIn">
+    <wsdl:part name="parameters" element="tns:get_buyer_waybills_ex" />
+  </wsdl:message>
+  <wsdl:message name="get_buyer_waybills_exSoapOut">
+    <wsdl:part name="parameters" element="tns:get_buyer_waybills_exResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_transporter_waybillsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_transporter_waybills" />
+  </wsdl:message>
+  <wsdl:message name="get_transporter_waybillsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_transporter_waybillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="send_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:send_waybill" />
+  </wsdl:message>
+  <wsdl:message name="send_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:send_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="send_waybil_vdSoapIn">
+    <wsdl:part name="parameters" element="tns:send_waybil_vd" />
+  </wsdl:message>
+  <wsdl:message name="send_waybil_vdSoapOut">
+    <wsdl:part name="parameters" element="tns:send_waybil_vdResponse" />
+  </wsdl:message>
+  <wsdl:message name="close_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:close_waybill" />
+  </wsdl:message>
+  <wsdl:message name="close_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:close_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="close_waybill_vdSoapIn">
+    <wsdl:part name="parameters" element="tns:close_waybill_vd" />
+  </wsdl:message>
+  <wsdl:message name="close_waybill_vdSoapOut">
+    <wsdl:part name="parameters" element="tns:close_waybill_vdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ref_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:ref_waybill" />
+  </wsdl:message>
+  <wsdl:message name="ref_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:ref_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="ref_waybill_vdSoapIn">
+    <wsdl:part name="parameters" element="tns:ref_waybill_vd" />
+  </wsdl:message>
+  <wsdl:message name="ref_waybill_vdSoapOut">
+    <wsdl:part name="parameters" element="tns:ref_waybill_vdResponse" />
+  </wsdl:message>
+  <wsdl:message name="del_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:del_waybill" />
+  </wsdl:message>
+  <wsdl:message name="del_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:del_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="confirm_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:confirm_waybill" />
+  </wsdl:message>
+  <wsdl:message name="confirm_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:confirm_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="reject_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:reject_waybill" />
+  </wsdl:message>
+  <wsdl:message name="reject_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:reject_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="save_waybill_transporterSoapIn">
+    <wsdl:part name="parameters" element="tns:save_waybill_transporter" />
+  </wsdl:message>
+  <wsdl:message name="save_waybill_transporterSoapOut">
+    <wsdl:part name="parameters" element="tns:save_waybill_transporterResponse" />
+  </wsdl:message>
+  <wsdl:message name="send_waybill_transporterSoapIn">
+    <wsdl:part name="parameters" element="tns:send_waybill_transporter" />
+  </wsdl:message>
+  <wsdl:message name="send_waybill_transporterSoapOut">
+    <wsdl:part name="parameters" element="tns:send_waybill_transporterResponse" />
+  </wsdl:message>
+  <wsdl:message name="close_waybill_transporterSoapIn">
+    <wsdl:part name="parameters" element="tns:close_waybill_transporter" />
+  </wsdl:message>
+  <wsdl:message name="close_waybill_transporterSoapOut">
+    <wsdl:part name="parameters" element="tns:close_waybill_transporterResponse" />
+  </wsdl:message>
+  <wsdl:message name="save_invoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:save_invoice" />
+  </wsdl:message>
+  <wsdl:message name="save_invoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:save_invoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="save_waybill_tamplateSoapIn">
+    <wsdl:part name="parameters" element="tns:save_waybill_tamplate" />
+  </wsdl:message>
+  <wsdl:message name="save_waybill_tamplateSoapOut">
+    <wsdl:part name="parameters" element="tns:save_waybill_tamplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_tamplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybill_tamplates" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_tamplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybill_tamplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_c_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:get_c_waybill" />
+  </wsdl:message>
+  <wsdl:message name="get_c_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:get_c_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_tamplateSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybill_tamplate" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_tamplateSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybill_tamplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="delete_waybill_tamplateSoapIn">
+    <wsdl:part name="parameters" element="tns:delete_waybill_tamplate" />
+  </wsdl:message>
+  <wsdl:message name="delete_waybill_tamplateSoapOut">
+    <wsdl:part name="parameters" element="tns:delete_waybill_tamplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="save_bar_codeSoapIn">
+    <wsdl:part name="parameters" element="tns:save_bar_code" />
+  </wsdl:message>
+  <wsdl:message name="save_bar_codeSoapOut">
+    <wsdl:part name="parameters" element="tns:save_bar_codeResponse" />
+  </wsdl:message>
+  <wsdl:message name="delete_bar_codeSoapIn">
+    <wsdl:part name="parameters" element="tns:delete_bar_code" />
+  </wsdl:message>
+  <wsdl:message name="delete_bar_codeSoapOut">
+    <wsdl:part name="parameters" element="tns:delete_bar_codeResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_bar_codesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_bar_codes" />
+  </wsdl:message>
+  <wsdl:message name="get_bar_codesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_bar_codesResponse" />
+  </wsdl:message>
+  <wsdl:message name="save_car_numbersSoapIn">
+    <wsdl:part name="parameters" element="tns:save_car_numbers" />
+  </wsdl:message>
+  <wsdl:message name="save_car_numbersSoapOut">
+    <wsdl:part name="parameters" element="tns:save_car_numbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="delete_car_numbersSoapIn">
+    <wsdl:part name="parameters" element="tns:delete_car_numbers" />
+  </wsdl:message>
+  <wsdl:message name="delete_car_numbersSoapOut">
+    <wsdl:part name="parameters" element="tns:delete_car_numbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_car_numbersSoapIn">
+    <wsdl:part name="parameters" element="tns:get_car_numbers" />
+  </wsdl:message>
+  <wsdl:message name="get_car_numbersSoapOut">
+    <wsdl:part name="parameters" element="tns:get_car_numbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_name_from_tinSoapIn">
+    <wsdl:part name="parameters" element="tns:get_name_from_tin" />
+  </wsdl:message>
+  <wsdl:message name="get_name_from_tinSoapOut">
+    <wsdl:part name="parameters" element="tns:get_name_from_tinResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_error_codesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_error_codes" />
+  </wsdl:message>
+  <wsdl:message name="get_error_codesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_error_codesResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_tin_from_un_idSoapIn">
+    <wsdl:part name="parameters" element="tns:get_tin_from_un_id" />
+  </wsdl:message>
+  <wsdl:message name="get_tin_from_un_idSoapOut">
+    <wsdl:part name="parameters" element="tns:get_tin_from_un_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_payer_type_from_un_idSoapIn">
+    <wsdl:part name="parameters" element="tns:get_payer_type_from_un_id" />
+  </wsdl:message>
+  <wsdl:message name="get_payer_type_from_un_idSoapOut">
+    <wsdl:part name="parameters" element="tns:get_payer_type_from_un_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="is_vat_payerSoapIn">
+    <wsdl:part name="parameters" element="tns:is_vat_payer" />
+  </wsdl:message>
+  <wsdl:message name="is_vat_payerSoapOut">
+    <wsdl:part name="parameters" element="tns:is_vat_payerResponse" />
+  </wsdl:message>
+  <wsdl:message name="is_vat_payer_tinSoapIn">
+    <wsdl:part name="parameters" element="tns:is_vat_payer_tin" />
+  </wsdl:message>
+  <wsdl:message name="is_vat_payer_tinSoapOut">
+    <wsdl:part name="parameters" element="tns:is_vat_payer_tinResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_adjusted_waybillsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_adjusted_waybills" />
+  </wsdl:message>
+  <wsdl:message name="get_adjusted_waybillsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_adjusted_waybillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_adjusted_waybillSoapIn">
+    <wsdl:part name="parameters" element="tns:get_adjusted_waybill" />
+  </wsdl:message>
+  <wsdl:message name="get_adjusted_waybillSoapOut">
+    <wsdl:part name="parameters" element="tns:get_adjusted_waybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_print_pdfSoapIn">
+    <wsdl:part name="parameters" element="tns:get_print_pdf" />
+  </wsdl:message>
+  <wsdl:message name="get_print_pdfSoapOut">
+    <wsdl:part name="parameters" element="tns:get_print_pdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_goods_listSoapIn">
+    <wsdl:part name="parameters" element="tns:get_waybill_goods_list" />
+  </wsdl:message>
+  <wsdl:message name="get_waybill_goods_listSoapOut">
+    <wsdl:part name="parameters" element="tns:get_waybill_goods_listResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_buyer_waybilll_goods_listSoapIn">
+    <wsdl:part name="parameters" element="tns:get_buyer_waybilll_goods_list" />
+  </wsdl:message>
+  <wsdl:message name="get_buyer_waybilll_goods_listSoapOut">
+    <wsdl:part name="parameters" element="tns:get_buyer_waybilll_goods_listResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WayBillsSoap">
+    <wsdl:operation name="what_is_my_ip">
+      <wsdl:input message="tns:what_is_my_ipSoapIn" />
+      <wsdl:output message="tns:what_is_my_ipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_server_time">
+      <wsdl:input message="tns:get_server_timeSoapIn" />
+      <wsdl:output message="tns:get_server_timeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="create_service_user">
+      <wsdl:input message="tns:create_service_userSoapIn" />
+      <wsdl:output message="tns:create_service_userSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_service_user">
+      <wsdl:input message="tns:update_service_userSoapIn" />
+      <wsdl:output message="tns:update_service_userSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_service_users">
+      <wsdl:input message="tns:get_service_usersSoapIn" />
+      <wsdl:output message="tns:get_service_usersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="chek_service_user">
+      <wsdl:input message="tns:chek_service_userSoapIn" />
+      <wsdl:output message="tns:chek_service_userSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_akciz_codes">
+      <wsdl:input message="tns:get_akciz_codesSoapIn" />
+      <wsdl:output message="tns:get_akciz_codesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_types">
+      <wsdl:input message="tns:get_waybill_typesSoapIn" />
+      <wsdl:output message="tns:get_waybill_typesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_units">
+      <wsdl:input message="tns:get_waybill_unitsSoapIn" />
+      <wsdl:output message="tns:get_waybill_unitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_trans_types">
+      <wsdl:input message="tns:get_trans_typesSoapIn" />
+      <wsdl:output message="tns:get_trans_typesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_wood_types">
+      <wsdl:input message="tns:get_wood_typesSoapIn" />
+      <wsdl:output message="tns:get_wood_typesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill">
+      <wsdl:input message="tns:save_waybillSoapIn" />
+      <wsdl:output message="tns:save_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill">
+      <wsdl:input message="tns:get_waybillSoapIn" />
+      <wsdl:output message="tns:get_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_by_number">
+      <wsdl:input message="tns:get_waybill_by_numberSoapIn" />
+      <wsdl:output message="tns:get_waybill_by_numberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills">
+      <wsdl:input message="tns:get_waybillsSoapIn" />
+      <wsdl:output message="tns:get_waybillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_v1">
+      <wsdl:input message="tns:get_waybills_v1SoapIn" />
+      <wsdl:output message="tns:get_waybills_v1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_medicaments_moh">
+      <wsdl:input message="tns:get_waybills_medicaments_mohSoapIn" />
+      <wsdl:output message="tns:get_waybills_medicaments_mohSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybills">
+      <wsdl:input message="tns:get_buyer_waybillsSoapIn" />
+      <wsdl:output message="tns:get_buyer_waybillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_ex">
+      <wsdl:input message="tns:get_waybills_exSoapIn" />
+      <wsdl:output message="tns:get_waybills_exSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybills_ex">
+      <wsdl:input message="tns:get_buyer_waybills_exSoapIn" />
+      <wsdl:output message="tns:get_buyer_waybills_exSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_transporter_waybills">
+      <wsdl:input message="tns:get_transporter_waybillsSoapIn" />
+      <wsdl:output message="tns:get_transporter_waybillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="send_waybill">
+      <wsdl:input message="tns:send_waybillSoapIn" />
+      <wsdl:output message="tns:send_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="send_waybil_vd">
+      <wsdl:input message="tns:send_waybil_vdSoapIn" />
+      <wsdl:output message="tns:send_waybil_vdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill">
+      <wsdl:input message="tns:close_waybillSoapIn" />
+      <wsdl:output message="tns:close_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill_vd">
+      <wsdl:input message="tns:close_waybill_vdSoapIn" />
+      <wsdl:output message="tns:close_waybill_vdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ref_waybill">
+      <wsdl:input message="tns:ref_waybillSoapIn" />
+      <wsdl:output message="tns:ref_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ref_waybill_vd">
+      <wsdl:input message="tns:ref_waybill_vdSoapIn" />
+      <wsdl:output message="tns:ref_waybill_vdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="del_waybill">
+      <wsdl:input message="tns:del_waybillSoapIn" />
+      <wsdl:output message="tns:del_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="confirm_waybill">
+      <wsdl:input message="tns:confirm_waybillSoapIn" />
+      <wsdl:output message="tns:confirm_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="reject_waybill">
+      <wsdl:input message="tns:reject_waybillSoapIn" />
+      <wsdl:output message="tns:reject_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill_transporter">
+      <wsdl:input message="tns:save_waybill_transporterSoapIn" />
+      <wsdl:output message="tns:save_waybill_transporterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="send_waybill_transporter">
+      <wsdl:input message="tns:send_waybill_transporterSoapIn" />
+      <wsdl:output message="tns:send_waybill_transporterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill_transporter">
+      <wsdl:input message="tns:close_waybill_transporterSoapIn" />
+      <wsdl:output message="tns:close_waybill_transporterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="save_invoice">
+      <wsdl:input message="tns:save_invoiceSoapIn" />
+      <wsdl:output message="tns:save_invoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill_tamplate">
+      <wsdl:input message="tns:save_waybill_tamplateSoapIn" />
+      <wsdl:output message="tns:save_waybill_tamplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_tamplates">
+      <wsdl:input message="tns:get_waybill_tamplatesSoapIn" />
+      <wsdl:output message="tns:get_waybill_tamplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_c_waybill">
+      <wsdl:input message="tns:get_c_waybillSoapIn" />
+      <wsdl:output message="tns:get_c_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_tamplate">
+      <wsdl:input message="tns:get_waybill_tamplateSoapIn" />
+      <wsdl:output message="tns:get_waybill_tamplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_waybill_tamplate">
+      <wsdl:input message="tns:delete_waybill_tamplateSoapIn" />
+      <wsdl:output message="tns:delete_waybill_tamplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="save_bar_code">
+      <wsdl:input message="tns:save_bar_codeSoapIn" />
+      <wsdl:output message="tns:save_bar_codeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_bar_code">
+      <wsdl:input message="tns:delete_bar_codeSoapIn" />
+      <wsdl:output message="tns:delete_bar_codeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_bar_codes">
+      <wsdl:input message="tns:get_bar_codesSoapIn" />
+      <wsdl:output message="tns:get_bar_codesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="save_car_numbers">
+      <wsdl:input message="tns:save_car_numbersSoapIn" />
+      <wsdl:output message="tns:save_car_numbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_car_numbers">
+      <wsdl:input message="tns:delete_car_numbersSoapIn" />
+      <wsdl:output message="tns:delete_car_numbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_car_numbers">
+      <wsdl:input message="tns:get_car_numbersSoapIn" />
+      <wsdl:output message="tns:get_car_numbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_name_from_tin">
+      <wsdl:input message="tns:get_name_from_tinSoapIn" />
+      <wsdl:output message="tns:get_name_from_tinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_error_codes">
+      <wsdl:input message="tns:get_error_codesSoapIn" />
+      <wsdl:output message="tns:get_error_codesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_tin_from_un_id">
+      <wsdl:input message="tns:get_tin_from_un_idSoapIn" />
+      <wsdl:output message="tns:get_tin_from_un_idSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_payer_type_from_un_id">
+      <wsdl:input message="tns:get_payer_type_from_un_idSoapIn" />
+      <wsdl:output message="tns:get_payer_type_from_un_idSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="is_vat_payer">
+      <wsdl:input message="tns:is_vat_payerSoapIn" />
+      <wsdl:output message="tns:is_vat_payerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="is_vat_payer_tin">
+      <wsdl:input message="tns:is_vat_payer_tinSoapIn" />
+      <wsdl:output message="tns:is_vat_payer_tinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_adjusted_waybills">
+      <wsdl:input message="tns:get_adjusted_waybillsSoapIn" />
+      <wsdl:output message="tns:get_adjusted_waybillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_adjusted_waybill">
+      <wsdl:input message="tns:get_adjusted_waybillSoapIn" />
+      <wsdl:output message="tns:get_adjusted_waybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_print_pdf">
+      <wsdl:input message="tns:get_print_pdfSoapIn" />
+      <wsdl:output message="tns:get_print_pdfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_goods_list">
+      <wsdl:input message="tns:get_waybill_goods_listSoapIn" />
+      <wsdl:output message="tns:get_waybill_goods_listSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybilll_goods_list">
+      <wsdl:input message="tns:get_buyer_waybilll_goods_listSoapIn" />
+      <wsdl:output message="tns:get_buyer_waybilll_goods_listSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WayBillsSoap" type="tns:WayBillsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="what_is_my_ip">
+      <soap:operation soapAction="http://tempuri.org/what_is_my_ip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_server_time">
+      <soap:operation soapAction="http://tempuri.org/get_server_time" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create_service_user">
+      <soap:operation soapAction="http://tempuri.org/create_service_user" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_service_user">
+      <soap:operation soapAction="http://tempuri.org/update_service_user" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_service_users">
+      <soap:operation soapAction="http://tempuri.org/get_service_users" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chek_service_user">
+      <soap:operation soapAction="http://tempuri.org/chek_service_user" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_akciz_codes">
+      <soap:operation soapAction="http://tempuri.org/get_akciz_codes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_types">
+      <soap:operation soapAction="http://tempuri.org/get_waybill_types" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_units">
+      <soap:operation soapAction="http://tempuri.org/get_waybill_units" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_trans_types">
+      <soap:operation soapAction="http://tempuri.org/get_trans_types" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_wood_types">
+      <soap:operation soapAction="http://tempuri.org/get_wood_types" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill">
+      <soap:operation soapAction="http://tempuri.org/save_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill">
+      <soap:operation soapAction="http://tempuri.org/get_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_by_number">
+      <soap:operation soapAction="http://tempuri.org/get_waybill_by_number" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills">
+      <soap:operation soapAction="http://tempuri.org/get_waybills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_v1">
+      <soap:operation soapAction="http://tempuri.org/get_waybills_v1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_medicaments_moh">
+      <soap:operation soapAction="http://tempuri.org/get_waybills_medicaments_moh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybills">
+      <soap:operation soapAction="http://tempuri.org/get_buyer_waybills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_ex">
+      <soap:operation soapAction="http://tempuri.org/get_waybills_ex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybills_ex">
+      <soap:operation soapAction="http://tempuri.org/get_buyer_waybills_ex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_transporter_waybills">
+      <soap:operation soapAction="http://tempuri.org/get_transporter_waybills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="send_waybill">
+      <soap:operation soapAction="http://tempuri.org/send_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="send_waybil_vd">
+      <soap:operation soapAction="http://tempuri.org/send_waybil_vd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill">
+      <soap:operation soapAction="http://tempuri.org/close_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill_vd">
+      <soap:operation soapAction="http://tempuri.org/close_waybill_vd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ref_waybill">
+      <soap:operation soapAction="http://tempuri.org/ref_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ref_waybill_vd">
+      <soap:operation soapAction="http://tempuri.org/ref_waybill_vd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="del_waybill">
+      <soap:operation soapAction="http://tempuri.org/del_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirm_waybill">
+      <soap:operation soapAction="http://tempuri.org/confirm_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reject_waybill">
+      <soap:operation soapAction="http://tempuri.org/reject_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill_transporter">
+      <soap:operation soapAction="http://tempuri.org/save_waybill_transporter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="send_waybill_transporter">
+      <soap:operation soapAction="http://tempuri.org/send_waybill_transporter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill_transporter">
+      <soap:operation soapAction="http://tempuri.org/close_waybill_transporter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_invoice">
+      <soap:operation soapAction="http://tempuri.org/save_invoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill_tamplate">
+      <soap:operation soapAction="http://tempuri.org/save_waybill_tamplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_tamplates">
+      <soap:operation soapAction="http://tempuri.org/get_waybill_tamplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_c_waybill">
+      <soap:operation soapAction="http://tempuri.org/get_c_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_tamplate">
+      <soap:operation soapAction="http://tempuri.org/get_waybill_tamplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_waybill_tamplate">
+      <soap:operation soapAction="http://tempuri.org/delete_waybill_tamplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_bar_code">
+      <soap:operation soapAction="http://tempuri.org/save_bar_code" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_bar_code">
+      <soap:operation soapAction="http://tempuri.org/delete_bar_code" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_bar_codes">
+      <soap:operation soapAction="http://tempuri.org/get_bar_codes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_car_numbers">
+      <soap:operation soapAction="http://tempuri.org/save_car_numbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_car_numbers">
+      <soap:operation soapAction="http://tempuri.org/delete_car_numbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_car_numbers">
+      <soap:operation soapAction="http://tempuri.org/get_car_numbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_name_from_tin">
+      <soap:operation soapAction="http://tempuri.org/get_name_from_tin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_error_codes">
+      <soap:operation soapAction="http://tempuri.org/get_error_codes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_tin_from_un_id">
+      <soap:operation soapAction="http://tempuri.org/get_tin_from_un_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_payer_type_from_un_id">
+      <soap:operation soapAction="http://tempuri.org/get_payer_type_from_un_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="is_vat_payer">
+      <soap:operation soapAction="http://tempuri.org/is_vat_payer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="is_vat_payer_tin">
+      <soap:operation soapAction="http://tempuri.org/is_vat_payer_tin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_adjusted_waybills">
+      <soap:operation soapAction="http://tempuri.org/get_adjusted_waybills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_adjusted_waybill">
+      <soap:operation soapAction="http://tempuri.org/get_adjusted_waybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_print_pdf">
+      <soap:operation soapAction="http://tempuri.org/get_print_pdf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_goods_list">
+      <soap:operation soapAction="http://tempuri.org/get_waybill_goods_list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybilll_goods_list">
+      <soap:operation soapAction="http://tempuri.org/get_buyer_waybilll_goods_list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WayBillsSoap12" type="tns:WayBillsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="what_is_my_ip">
+      <soap12:operation soapAction="http://tempuri.org/what_is_my_ip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_server_time">
+      <soap12:operation soapAction="http://tempuri.org/get_server_time" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create_service_user">
+      <soap12:operation soapAction="http://tempuri.org/create_service_user" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_service_user">
+      <soap12:operation soapAction="http://tempuri.org/update_service_user" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_service_users">
+      <soap12:operation soapAction="http://tempuri.org/get_service_users" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chek_service_user">
+      <soap12:operation soapAction="http://tempuri.org/chek_service_user" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_akciz_codes">
+      <soap12:operation soapAction="http://tempuri.org/get_akciz_codes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_types">
+      <soap12:operation soapAction="http://tempuri.org/get_waybill_types" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_units">
+      <soap12:operation soapAction="http://tempuri.org/get_waybill_units" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_trans_types">
+      <soap12:operation soapAction="http://tempuri.org/get_trans_types" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_wood_types">
+      <soap12:operation soapAction="http://tempuri.org/get_wood_types" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill">
+      <soap12:operation soapAction="http://tempuri.org/save_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill">
+      <soap12:operation soapAction="http://tempuri.org/get_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_by_number">
+      <soap12:operation soapAction="http://tempuri.org/get_waybill_by_number" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills">
+      <soap12:operation soapAction="http://tempuri.org/get_waybills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_v1">
+      <soap12:operation soapAction="http://tempuri.org/get_waybills_v1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_medicaments_moh">
+      <soap12:operation soapAction="http://tempuri.org/get_waybills_medicaments_moh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybills">
+      <soap12:operation soapAction="http://tempuri.org/get_buyer_waybills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybills_ex">
+      <soap12:operation soapAction="http://tempuri.org/get_waybills_ex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybills_ex">
+      <soap12:operation soapAction="http://tempuri.org/get_buyer_waybills_ex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_transporter_waybills">
+      <soap12:operation soapAction="http://tempuri.org/get_transporter_waybills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="send_waybill">
+      <soap12:operation soapAction="http://tempuri.org/send_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="send_waybil_vd">
+      <soap12:operation soapAction="http://tempuri.org/send_waybil_vd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill">
+      <soap12:operation soapAction="http://tempuri.org/close_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill_vd">
+      <soap12:operation soapAction="http://tempuri.org/close_waybill_vd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ref_waybill">
+      <soap12:operation soapAction="http://tempuri.org/ref_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ref_waybill_vd">
+      <soap12:operation soapAction="http://tempuri.org/ref_waybill_vd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="del_waybill">
+      <soap12:operation soapAction="http://tempuri.org/del_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirm_waybill">
+      <soap12:operation soapAction="http://tempuri.org/confirm_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reject_waybill">
+      <soap12:operation soapAction="http://tempuri.org/reject_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill_transporter">
+      <soap12:operation soapAction="http://tempuri.org/save_waybill_transporter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="send_waybill_transporter">
+      <soap12:operation soapAction="http://tempuri.org/send_waybill_transporter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="close_waybill_transporter">
+      <soap12:operation soapAction="http://tempuri.org/close_waybill_transporter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_invoice">
+      <soap12:operation soapAction="http://tempuri.org/save_invoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_waybill_tamplate">
+      <soap12:operation soapAction="http://tempuri.org/save_waybill_tamplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_tamplates">
+      <soap12:operation soapAction="http://tempuri.org/get_waybill_tamplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_c_waybill">
+      <soap12:operation soapAction="http://tempuri.org/get_c_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_tamplate">
+      <soap12:operation soapAction="http://tempuri.org/get_waybill_tamplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_waybill_tamplate">
+      <soap12:operation soapAction="http://tempuri.org/delete_waybill_tamplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_bar_code">
+      <soap12:operation soapAction="http://tempuri.org/save_bar_code" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_bar_code">
+      <soap12:operation soapAction="http://tempuri.org/delete_bar_code" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_bar_codes">
+      <soap12:operation soapAction="http://tempuri.org/get_bar_codes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_car_numbers">
+      <soap12:operation soapAction="http://tempuri.org/save_car_numbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_car_numbers">
+      <soap12:operation soapAction="http://tempuri.org/delete_car_numbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_car_numbers">
+      <soap12:operation soapAction="http://tempuri.org/get_car_numbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_name_from_tin">
+      <soap12:operation soapAction="http://tempuri.org/get_name_from_tin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_error_codes">
+      <soap12:operation soapAction="http://tempuri.org/get_error_codes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_tin_from_un_id">
+      <soap12:operation soapAction="http://tempuri.org/get_tin_from_un_id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_payer_type_from_un_id">
+      <soap12:operation soapAction="http://tempuri.org/get_payer_type_from_un_id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="is_vat_payer">
+      <soap12:operation soapAction="http://tempuri.org/is_vat_payer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="is_vat_payer_tin">
+      <soap12:operation soapAction="http://tempuri.org/is_vat_payer_tin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_adjusted_waybills">
+      <soap12:operation soapAction="http://tempuri.org/get_adjusted_waybills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_adjusted_waybill">
+      <soap12:operation soapAction="http://tempuri.org/get_adjusted_waybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_print_pdf">
+      <soap12:operation soapAction="http://tempuri.org/get_print_pdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_waybill_goods_list">
+      <soap12:operation soapAction="http://tempuri.org/get_waybill_goods_list" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_buyer_waybilll_goods_list">
+      <soap12:operation soapAction="http://tempuri.org/get_buyer_waybilll_goods_list" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WayBills">
+    <wsdl:port name="WayBillsSoap" binding="tns:WayBillsSoap">
+      <soap:address location="https://services.rs.ge/WayBillService/WayBillService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WayBillsSoap12" binding="tns:WayBillsSoap12">
+      <soap12:address location="https://services.rs.ge/WayBillService/WayBillService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

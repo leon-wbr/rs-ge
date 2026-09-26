@@ -1,0 +1,58 @@
+{
+  "name": "rs-ge",
+  "version": "0.0.0",
+  "description": "Typed, dependency-free client for the Georgian Revenue Service (rs.ge) SOAP services, authenticated with a service user. Runs on Node, Cloudflare Workers, Deno and Bun.",
+  "license": "MIT",
+  "author": "Leon Weber",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leon-wbr/rs-ge.git"
+  },
+  "homepage": "https://github.com/leon-wbr/rs-ge#readme",
+  "bugs": "https://github.com/leon-wbr/rs-ge/issues",
+  "keywords": [
+    "rs.ge",
+    "georgia",
+    "revenue-service",
+    "tax",
+    "waybill",
+    "invoice",
+    "soap",
+    "cloudflare-workers"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "rs-ge": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "generate": "node scripts/generate.ts",
+    "wsdl:check": "node scripts/wsdl-check.ts",
+    "probe": "node src/cli.ts probe"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "oxlint": "^1.81.0",
+    "tsdown": "^0.23.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.2"
+  },
+  "packageManager": "pnpm@10.28.0"
+}
