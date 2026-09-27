@@ -151,6 +151,21 @@ describe('parseRsDateTime', () => {
     expect(parseRsDateTime('2024-02-29T00:00:00')).toEqual({ date: '2024-02-29', iso: '2024-02-29T00:00:00+04:00' });
   });
 
+  it('rejects impossible dates and times instead of passing or rolling them over', () => {
+    for (const bad of [
+      '2023-02-29T00:00:00',
+      '2026-02-30T00:00:00',
+      '2026-13-01T00:00:00',
+      '2026-04-31T00:00:00Z',
+      '2026-02-30T00:00:00+04:00',
+      '2026-01-01T24:00:00',
+      '2026-01-01T12:60:00',
+      '2026-01-01T12:00:60Z',
+    ]) {
+      expect(() => parseRsDateTime(bad), bad).toThrow(RangeError);
+    }
+  });
+
   it('rejects text that is not a dateTime', () => {
     expect(() => parseRsDateTime('2026-05-31')).toThrow(RangeError);
     expect(() => parseRsDateTime('31.05.2026 12:00')).toThrow(RangeError);

@@ -38,9 +38,11 @@ export function formatRsDate(date: CalendarDate, options: { endOfDay?: boolean }
 export function parseRsDateTime(text: string): RsDateTime | null {
   const value = text.trim();
   if (value === '' || value.startsWith('0001-01-01')) return null;
-  const match = /^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})(?:\.\d+)?(Z|[+-]\d{2}:\d{2})?$/.exec(value);
+  const match = /^(\d{4}-\d{2}-\d{2})T(([01]\d|2[0-3]):[0-5]\d:[0-5]\d)(?:\.\d+)?(Z|[+-]\d{2}:\d{2})?$/.exec(value);
   if (!match) throw new RangeError(`Unrecognised dateTime ${JSON.stringify(text)}`);
-  const [, date, time, zone] = match;
+  const [, date, time, , zone] = match;
+  // Without this, an impossible date passes through as is, or rolls over once an offset makes Date parse it.
+  assertCalendarDate(date!);
   if (!zone) return { date: date!, iso: `${date}T${time}+04:00` };
   const local = new Date(new Date(`${date}T${time}${zone}`).getTime() + TBILISI_OFFSET_MS).toISOString();
   return { date: local.slice(0, 10), iso: `${local.slice(0, 19)}+04:00` };
