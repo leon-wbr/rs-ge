@@ -37,6 +37,53 @@ describe('parseXml', () => {
   });
 });
 
+describe('parseXml edge cases', () => {
+  it('reads single-quoted attributes, prefixed attribute names and ">" inside attribute values', () => {
+    const root = parseXml(`<r a='1' xsi:b="x>y" c = "&amp;"><k/></r>`);
+    expect(root.attrs).toEqual({ a: '1', b: 'x>y', c: '&' });
+    expect(root.children).toHaveLength(1);
+  });
+
+  it('keeps text split by child elements or comments in one text value', () => {
+    expect(textOf(parseXml('<r>a<!-- x -->b<![CDATA[c]]>d</r>'))).toBe('abcd');
+  });
+
+  it('does not decode entities inside CDATA', () => {
+    expect(textOf(parseXml('<r><![CDATA[&amp; &bogus;]]></r>'))).toBe('&amp; &bogus;');
+  });
+
+  it('ignores whitespace and the XML declaration around the root', () => {
+    expect(parseXml('\n <?xml version="1.0"?>\n<r/>\n').name).toBe('r');
+  });
+
+  it('rejects unknown entities', () => {
+    expect(() => parseXml('<r>&nbsp;</r>')).toThrow(/Unknown XML entity &nbsp;/);
+  });
+
+  it.each([
+    ['', /No root element/],
+    ['<a>', /Unclosed element <a>/],
+    ['<a/><b/>', /More than one root/],
+    ['x<a/>', /Text outside the root/],
+    ['<a><!-- open</a>', /Unterminated markup/],
+    ['<a b="1></a>', /Unterminated tag/],
+    ['<a></b>', /Mismatched closing tag <\/b>, expected <\/a>/],
+    ['<>', /Malformed tag/],
+  ])('rejects malformed input %j', (xml, message) => {
+    expect(() => parseXml(xml)).toThrow(message);
+  });
+
+  it('matches closing tags on the full prefixed name', () => {
+    expect(() => parseXml('<a:r></b:r>')).toThrow(/Mismatched/);
+    expect(parseXml('<a:r></a:r>').name).toBe('r');
+  });
+
+  it('isNil only honours xsi:nil="true"', () => {
+    const root = parseXml('<r><a xsi:nil="false"/><b xsi:nil="1"/><c nil="true"/></r>');
+    expect(root.children.map(isNil)).toEqual([false, false, true]);
+  });
+});
+
 describe('escapeXml', () => {
   it('escapes all five XML special characters', () => {
     expect(escapeXml(`<a href="x">Tom & Jerry's</a>`)).toBe('&lt;a href=&quot;x&quot;&gt;Tom &amp; Jerry&apos;s&lt;/a&gt;');
