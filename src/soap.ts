@@ -75,6 +75,9 @@ export function buildEnvelope(schema: ServiceSchema, operation: string, input: R
 
 class ShapeMismatch extends Error {}
 
+/** xs:double lexical values a decimal string cannot hold; xs:decimal does not allow them. */
+const SPECIAL_DOUBLES = new Map([['INF', Infinity], ['-INF', -Infinity], ['NaN', NaN]]);
+
 function decodeValue(el: XmlElement, type: FieldType, schema: ServiceSchema): unknown {
   if (isNil(el)) return null;
   const text = el.text.trim();
@@ -90,8 +93,10 @@ function decodeValue(el: XmlElement, type: FieldType, schema: ServiceSchema): un
       if (!/^-?\d+$/.test(text)) throw new ShapeMismatch(`<${el.name}> is not an integer: ${text}`);
       return Number(text);
     }
-    case 'decimal':
     case 'double':
+      if (SPECIAL_DOUBLES.has(text)) return SPECIAL_DOUBLES.get(text);
+    // falls through
+    case 'decimal':
       try {
         return normalizeDecimal(text);
       } catch (error) {
