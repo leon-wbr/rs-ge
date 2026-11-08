@@ -1,24 +1,30 @@
 {
   "name": "rs-ge",
-  "version": "0.0.0",
-  "description": "Typed, dependency-free client for the Georgian Revenue Service (rs.ge) SOAP services, authenticated with a service user. Runs on Node, Cloudflare Workers, Deno and Bun.",
+  "version": "0.1.0",
+  "description": "Unofficial, typed, dependency-free TypeScript client for Georgia's Revenue Service (rs.ge) SOAP services: TaxPayer, WayBill and e-invoices. Runs on Node, Cloudflare Workers, Deno and Bun.",
   "license": "MIT",
   "author": "Leon Weber",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leon-wbr/rs-ge.git"
   },
-  "homepage": "https://github.com/leon-wbr/rs-ge#readme",
+  "homepage": "https://www.npmjs.com/package/rs-ge",
   "bugs": "https://github.com/leon-wbr/rs-ge/issues",
   "keywords": [
     "rs.ge",
+    "rs-ge",
     "georgia",
     "revenue-service",
     "tax",
     "waybill",
+    "e-invoice",
     "invoice",
     "soap",
-    "cloudflare-workers"
+    "soap-client",
+    "typescript",
+    "cloudflare-workers",
+    "deno",
+    "bun"
   ],
   "type": "module",
   "sideEffects": false,
@@ -38,8 +44,13 @@
   "engines": {
     "node": ">=22"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "build": "tsdown",
+    "prepack": "tsdown",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint",

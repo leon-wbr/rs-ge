@@ -89,6 +89,15 @@ if (command === 'probe') {
   const at = args.indexOf('--record');
   await probe(at >= 0 ? args[at + 1] : undefined);
 } else {
-  console.log('Usage: rs-ge probe [--record <dir>]');
-  process.exitCode = command ? 2 : 0;
+  const help = !command || command === '--help' || command === '-h' || command === 'help';
+  (help ? console.log : console.error)(
+    [
+      'Usage: rs-ge probe [--record <dir>]',
+      '',
+      'Calls each read-only method once and prints which ones answer, without values.',
+      'Needs RSGE_USERNAME (name:TIN) and RSGE_PASSWORD; RSGE_TIN is optional.',
+      '--record <dir> saves each redacted response to <dir>/<operation>.raw.xml.',
+    ].join('\n'),
+  );
+  process.exitCode = help ? 0 : 2;
 }
