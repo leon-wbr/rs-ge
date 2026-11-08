@@ -2,7 +2,7 @@
 
 > **Work in progress, experimental.** The API may change without notice, parts of it are untested against the live service, and it isn't ready for production use.
 
-A typed TypeScript client for the SOAP services of Georgia's Revenue Service (rs.ge): the TaxPayer service, the WayBill service and the NTOS e-invoice service. It authenticates with a **service user** (სერვისის მომხმარებელი), the limited login a taxpayer creates in their rs.ge account for software, and never with the main portal password.
+A typed TypeScript client for the SOAP services of Georgia's Revenue Service ([rs.ge](https://www.rs.ge/)): the TaxPayer service, the WayBill service and the NTOS e-invoice service. It authenticates with a **service user** (სერვისის მომხმარებელი), the limited login a taxpayer creates in their rs.ge account for software, and never with the main portal password.
 
 - No runtime dependencies. It only needs `fetch`, so it runs on Node 22+, Cloudflare Workers, Deno and Bun.
 - Every operation of all three services is typed, generated from the WSDLs rs.ge publishes.
@@ -17,6 +17,8 @@ A typed TypeScript client for the SOAP services of Georgia's Revenue Service (rs
 ```sh
 npm install rs-ge
 ```
+
+Requires Node 22 or later (or Cloudflare Workers, Deno or Bun). Working on the repo itself needs Node 22.18 or later, see [Development](#development).
 
 ## Use
 
@@ -80,7 +82,9 @@ All errors extend `RsGeError` and carry `service` and `operation`.
 | `taxpayer.comparisonAct({ tin, from, to })` | `Get_comp_act_new` | WSDL only |
 | `taxpayer.publicInfo(tin)` | `GetTPInfoPublic` | WSDL only |
 | `waybill.nameFromTin(tin)` | `get_name_from_tin` | documented |
-| `waybill.serverTime()`, `isVatPayer(tin)`, `tinFromUnId(unId)` | `get_server_time`, `is_vat_payer_tin`, `get_tin_from_un_id` | WSDL only |
+| `waybill.serverTime()` | `get_server_time` | WSDL only |
+| `waybill.isVatPayer(tin)` | `is_vat_payer_tin` | WSDL only |
+| `waybill.tinFromUnId(unId)` | `get_tin_from_un_id` | WSDL only |
 | `invoices.userId()` | NTOS `chek` | documented; the `user_id = 0` lookup is unverified |
 
 "Documented" means rs.ge publishes a protocol for it. "WSDL only" means the operation is published in the service's WSDL but has no protocol document. No method has been verified against a live account yet; this table will say when one has.
@@ -89,7 +93,7 @@ rs-ge deliberately doesn't wrap `create_service_user`, `get_service_users` and t
 
 ## Creating a service user
 
-Log in at eservices.rs.ge, open **მომხმარებლების მართვა** (User management), click **ახალი მომხმარებელი** (New user) and choose **ქვე-მომხმარებელი** (sub-user). Set a name, username and password, leave **IP მისამართი** empty unless your server has a fixed address, and tick only the permissions your software needs in **უფლებები**. After saving, the locked **სერვის მომხმარებელი** field shows the full username to use.
+Log in at [eservices.rs.ge](https://eservices.rs.ge/), open **მომხმარებლების მართვა** (User management), click **ახალი მომხმარებელი** (New user) and choose **ქვე-მომხმარებელი** (sub-user). Set a name, username and password, leave **IP მისამართი** empty unless your server has a fixed address, and tick only the permissions your software needs in **უფლებები**. After saving, the locked **სერვის მომხმარებელი** field shows the full username to use.
 
 ## Probe
 
@@ -99,16 +103,23 @@ To see which methods answer for a service user, without printing any values:
 RSGE_USERNAME='myapp:206322102' RSGE_PASSWORD='…' npx rs-ge probe
 ```
 
+`RSGE_TIN` is optional. Without it, the probe looks up the TIN from the service user, and skips the own-TIN and `Get_comp_act_new` steps if that lookup fails.
+
 `--record <dir>` also saves each redacted response to `<dir>/<operation>.raw.xml`. Those files still contain the taxpayer's data; anonymise them before sharing.
 
 ## Development
 
+The scripts run TypeScript files directly, so they need Node 22.18 or later.
+
 ```sh
 pnpm install
+pnpm build         # build dist/ with tsdown
+pnpm lint          # oxlint
 pnpm test          # unit tests against synthetic fixtures
 pnpm typecheck
 pnpm generate      # regenerate src/generated from wsdl/
 pnpm wsdl:check    # compare wsdl/ with what rs.ge serves now
+pnpm probe         # the probe above, run from source
 ```
 
 `fixtures/synthetic` holds responses shaped from the WSDLs with invented values. Recorded responses go in `fixtures/recorded` only after `scripts/anonymise.ts` has replaced every identifier with a stable fake and scaled the amounts:
@@ -117,6 +128,10 @@ pnpm wsdl:check    # compare wsdl/ with what rs.ge serves now
 RSGE_IDENTIFIERS='206322102,Name Surname' RSGE_SCALE=0.83 node scripts/anonymise.ts recorded/Get_QuickCash_Info.raw.xml fixtures/recorded/Get_QuickCash_Info.xml
 ```
 
+## Help and contributing
+
+Questions, bugs and pull requests are welcome in [GitHub Issues](https://github.com/leon-wbr/rs-ge/issues). Recorded fixtures must be anonymised with `scripts/anonymise.ts` before you commit or share them: they hold a real taxpayer's data.
+
 ## Licence
 
-MIT
+MIT, see [LICENSE](LICENSE).
